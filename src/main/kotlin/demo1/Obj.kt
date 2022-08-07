@@ -111,3 +111,12 @@ fun addProduct(name:String,price:Double=0.0,desc:String?=null)=
     "Adding product with $name, ${desc ?:"None"},and "+
             NumberFormat.getCurrencyInstance().format(price)
 
+/**
+ * 在java调用时，相关可选填参数也变为了Nullable
+ */
+@JvmOverloads
+fun addProductSelection(name:String,price:Double=0.0,desc:String?=null)=
+    "Adding product with $name, ${desc ?:"None"},and "+
+            NumberFormat.getCurrencyInstance().format(price)
+
+
