@@ -15,6 +15,11 @@ fun main() {
 
     println(2 `**` 1)
     println(2 `**` 2)
+    println(2 exp 2)
+    println(shlResult)
+    println(shlResult2)
+    println(shrResult)
+    println(shrResult2)
 }
 
 /**
@@ -72,3 +77,19 @@ infix fun Double.`**`(x:Int) = pow(x)
  * 如果你对双星号操作符包装在反引号中比较反感，可以很容易定义一个
  * 实际的函数名来代替，例如exp
  */
+
+infix fun Int.exp(x:Int) = toDouble().pow(x).toInt()
+infix fun Long.exp(x:Int) = toDouble().pow(x).toLong()
+infix fun Float.exp(x:Int) = pow(x)
+infix fun Double.exp(x:Int) = pow(x)
+
+/**
+ * 使用移位运算符
+ * Kotlin提供了shr，shl，以及ushr等函数来达成此目的
+ * 位运算出现在各种应用程序中，包括访问控制列表、通讯协议、压缩与加密算法以及计算机图形学
+ * 与许多其他语言不同，Kotlin不使用特定等运算符来进行移位运算，而是为它们定义了函数
+ */
+val shlResult = 1 shl 1
+val shlResult2 = 1 shl 2
+val shrResult = 235 shr 1
+val shrResult2 = 235 shr 2
